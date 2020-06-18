@@ -5,10 +5,120 @@
 		<meta name=”viewport” content=”width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no”/> 
 		<title>MiniLy-UI</title>
 		<link href="css/main.css" rel="stylesheet" type="text/css" /> 
+		<link rel="icon" href="img/fav.ico" >
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	</head>
 	<body>
-		<div class="container">
-			<div class="big-title">MiniLy-UI 使用文档</div>
+		<div class="container" id="app">
+			<div class="big-title">
+				<p class="big">MiniLy-UI 使用文档</p>
+				<p class="small">By @LanYue</p>
+				<p class="update">@update: 2020/6/18 上午10:20:19</p>
+			</div>
+			
+			<div v-for="(item,index) in tableList" :key='index'>
+				<div class="component-name">{{ item.name.split('Attributes')[0]}} <span class="name-bg">< {{ item.name.split('Attributes')[1] }} ></{{></span> </div>
+				<table border="0" class="ly-table">
+					<tr>
+						<th>参数</th>
+						<th>说明</th>
+						<th>类型</th>
+						<th>可选值</th>
+						<th>默认值</th>
+					</tr>
+					<tr v-for="(child,index) in item.childList" :key='index'>
+						<td>{{ child.query }}</td>
+						<td>{{ child.info }}</td>
+						<td>{{ child.type }}</td>
+						<td>{{ child.choose }}</td>
+						<td>{{ child.default }}</td>
+					</tr>
+				</table>
+			</div>
+			
 		</div>
 	</body>
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data(){
+				return{
+					nowDate: new Date().toLocaleString(),
+					tableList:[
+						{
+							name: 'LyInput Attributes 输入框',
+							childList: [
+								{ query: 'type', info: '类型', type: 'string', choose: '原生支持的type值', default: 'text' },
+								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
+								{ query: 'placeholder', info: '输入框占位文本', type: 'string', choose: '--', default: '--' },
+								{ query: 'with', info: '输入框长度', type: 'string', choose: '任意长度', default: '100%的弹性自适应' },
+								{ query: 'disabled', info: '禁用', type: 'boolean', choose: '--', default: 'false' },
+								{ query: 'clearable', info: '是否可清空	', type: 'boolean', choose: '--', default: 'false' },
+								{ query: 'show-password', info: '是否显示切换密码图标	', type: 'boolean', choose: '--', default: 'false' },
+								{ query: 'size', info: '输入框尺寸', type: 'string', choose: 'mini / small / medium / large', default: 'false' },
+								{ query: 'after-icon', info: '输入框末尾追加 icon', type: 'string', choose: '详细见 icon 图标', default: '--' },
+							]
+							
+						},
+						
+						{
+							name: 'LyBotton Attributes 按钮',
+							childList: [
+								{ query: 'type', info: '类型', type: 'string', choose: 'text / info / primary / warn / danger / success', default: 'info' },
+								{ query: 'size', info: '尺寸', type: 'string', choose: 'mini / small / medium / large', default: '--' },
+								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+								{ query: 'round', info: '是否圆角按钮', type: 'boolean', choose: '--', default: 'false' },
+							]
+							
+						},
+						
+						{
+							name: 'LySelect Attributes 下拉框',
+							childList: [
+								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
+								{ query: 'placeholder', info: '占位符', type: 'string', choose: '--', default: '请选择' },
+								{ query: 'width', info: '选择器长度', type: 'string', choose: '任意长度', default: '100%的弹性自适应' },
+								{ query: 'size', info: '尺寸', type: 'string', choose: 'mini / small / medium / large', default: '--' },
+								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+							]
+							
+						},
+						
+						{
+							name: 'LyRadio Attributes 单选框',
+							childList: [
+								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
+								{ query: 'label', info: 'radio 的 value 值', type: 'string / number', choose: '--', default: '--' },
+								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+							]
+							
+						},
+						
+						{
+							name: 'LyCheckBox Attributes 复选框',
+							childList: [
+								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
+								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+							]
+							
+						},
+						
+						{
+							name: 'LySwitch Attributes switch 开关',
+							childList: [
+								{ query: 'v-model', info: '是否开启开关', type: 'boolean', choose: '--', default: 'true' },
+								{ query: 'active-color', info: 'switch 开启时的颜色背景', type: 'string', choose: '自定义颜色即可', default: '#5095fb' },
+								{ query: 'active-text', info: 'switch 开启时的文字描述', type: 'string', choose: '自定义即可', default: '--' },
+								{ query: 'untive-color', info: 'switch 关闭时的颜色背景', type: 'string', choose: '自定义颜色即可', default: '--' },
+								{ query: 'untive-text', info: 'switch 关闭时的文字描述', type: 'string', choose: '自定义即可', default: '--' },
+								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+							]
+							
+						}
+					],
+					
+				}
+			},
+		})
+	</script>
 </html>
