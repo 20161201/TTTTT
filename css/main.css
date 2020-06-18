@@ -36,24 +36,12 @@ html,body{
 	font-size: 15px;
 }
 /*表格样式*/			
-/* @media screen and (max-width: 600px) {
-	table{
-		width: 60%;
-	}
-}
-
-@media screen and (min-width: 600px) {
-	table{
-		width: 100%;
-	}
-} */
-
 table {
 	width: 60%;
 	min-width: 768px;
 	background: #ccc;
 	margin: 10px auto 60px auto;
-	border-collapse: collapse;/*border-collapse:collapse合并内外边距(去除表格单元格默认的2个像素内外边距*/	
+	border-collapse: collapse;
 }				
 th{
 	height: 35px;

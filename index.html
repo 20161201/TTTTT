@@ -13,7 +13,8 @@
 			<div class="big-title">
 				<p class="big">MiniLy-UI 使用文档</p>
 				<p class="small">By @LanYue</p>
-				<p class="update">@update: 2020/6/18 上午10:20:19</p>
+				<!-- <p class="update">@update: 2020/6/18 上午10:20:19</p> -->
+				<p class="update">@update: 2020/6/18 下午15:32:19</p>
 			</div>
 			
 			<div v-for="(item,index) in tableList" :key='index'>
@@ -51,11 +52,14 @@
 								{ query: 'type', info: '类型', type: 'string', choose: '原生支持的type值', default: 'text' },
 								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
 								{ query: 'placeholder', info: '输入框占位文本', type: 'string', choose: '--', default: '--' },
-								{ query: 'with', info: '输入框长度', type: 'string', choose: '任意长度', default: '100%的弹性自适应' },
+								{ query: 'maxlength', info: '最大输入长度', type: 'number', choose: '--', default: '--' },
+								{ query: 'minlength', info: '最小输入长度', type: 'number', choose: '--', default: '--' },
+								{ query: 'with', info: '输入框长度', type: 'string', choose: '任意长度', default: '弹性自适应' },
 								{ query: 'disabled', info: '禁用', type: 'boolean', choose: '--', default: 'false' },
 								{ query: 'clearable', info: '是否可清空	', type: 'boolean', choose: '--', default: 'false' },
 								{ query: 'show-password', info: '是否显示切换密码图标	', type: 'boolean', choose: '--', default: 'false' },
-								{ query: 'size', info: '输入框尺寸', type: 'string', choose: 'mini / small / medium / large', default: 'false' },
+								{ query: 'size', info: '输入框尺寸', type: 'string', choose: 'mini / small / medium', default: 'false' },
+								{ query: 'before-icon', info: '输入框头部追加 icon', type: 'string', choose: '详细见 icon 图标', default: '--' },
 								{ query: 'after-icon', info: '输入框末尾追加 icon', type: 'string', choose: '详细见 icon 图标', default: '--' },
 							]
 							
@@ -65,8 +69,9 @@
 							name: 'LyBotton Attributes 按钮',
 							childList: [
 								{ query: 'type', info: '类型', type: 'string', choose: 'text / info / primary / warn / danger / success', default: 'info' },
-								{ query: 'size', info: '尺寸', type: 'string', choose: 'mini / small / medium / large', default: '--' },
+								{ query: 'size', info: '尺寸', type: 'string', choose: 'mini / small / medium', default: '--' },
 								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+								{ query: 'loading', info: '是否加载中状态', type: 'boolean', choose: '--', default: 'false' },
 								{ query: 'round', info: '是否圆角按钮', type: 'boolean', choose: '--', default: 'false' },
 							]
 							
@@ -77,7 +82,7 @@
 							childList: [
 								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
 								{ query: 'placeholder', info: '占位符', type: 'string', choose: '--', default: '请选择' },
-								{ query: 'width', info: '选择器长度', type: 'string', choose: '任意长度', default: '100%的弹性自适应' },
+								{ query: 'width', info: '选择器长度', type: 'string', choose: '任意长度', default: '弹性自适应' },
 								{ query: 'size', info: '尺寸', type: 'string', choose: 'mini / small / medium / large', default: '--' },
 								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
 							]
