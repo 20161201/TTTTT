@@ -36,7 +36,6 @@
 					</tr>
 				</table>
 			</div>
-			
 		</div>
 	</body>
 	<script>
@@ -62,7 +61,6 @@
 								{ query: 'before-icon', info: '输入框头部追加 icon', type: 'string', choose: '详细见 icon 图标', default: '--' },
 								{ query: 'after-icon', info: '输入框末尾追加 icon', type: 'string', choose: '详细见 icon 图标', default: '--' },
 							]
-							
 						},
 						
 						{
@@ -74,7 +72,6 @@
 								{ query: 'loading', info: '是否加载中状态', type: 'boolean', choose: '--', default: 'false' },
 								{ query: 'round', info: '是否圆角按钮', type: 'boolean', choose: '--', default: 'false' },
 							]
-							
 						},
 						
 						{
@@ -86,7 +83,6 @@
 								{ query: 'size', info: '尺寸', type: 'string', choose: 'mini / small / medium / large', default: '--' },
 								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
 							]
-							
 						},
 						
 						{
@@ -96,7 +92,6 @@
 								{ query: 'label', info: 'radio 的 value 值', type: 'string / number', choose: '--', default: '--' },
 								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
 							]
-							
 						},
 						
 						{
@@ -105,7 +100,6 @@
 								{ query: 'v-model', info: '绑定值', type: 'string / number', choose: '--', default: '--' },
 								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
 							]
-							
 						},
 						
 						{
@@ -118,7 +112,39 @@
 								{ query: 'untive-text', info: 'switch 关闭时的文字描述', type: 'string', choose: '自定义即可', default: '--' },
 								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
 							]
-							
+						},
+						
+						{
+							name: 'LyTimePicker Attributes 时间选择器',
+							childList: [
+								{ query: 'v-model', info: '绑定的选中值', type: 'string', choose: '--', default: '--' },
+								{ query: 'picker-options', info: '下拉列表中的数据', type: 'object', choose: '--', default: '--' },
+								{ query: 'disabled', info: '是否禁用状态', type: 'boolean', choose: '--', default: 'false' },
+								{ query: 'clearable', info: '是否可清空选中的值', type: 'boolean', choose: '--', default: 'false' },
+							]
+						},
+						
+						{
+							name: 'LyPopConfirm Attributes 气泡确认框',
+							childList: [
+								{ query: 'confirmText', info: '左侧按钮的文本内容', type: 'string', choose: '--', default: '确认' },
+								{ query: 'confirmType', info: '左侧按钮的类型', type: 'string', choose: 'text / info / primary / warn / danger / success', default: 'primary' },
+								{ query: 'cancelText', info: '右侧按钮的文本内容', type: 'string', choose: '--', default: '取消' },
+								{ query: 'cancelType', info: '右侧按钮的类型', type: 'string', choose: 'text / info / primary / warn / danger / success', default: 'text' },
+								{ query: 'title', info: '提示内容', type: 'string', choose: '--', default: '--' },
+								{ query: '@onConfirm', info: '左侧按钮的点击事件', type: 'method', choose: '--', default: '--' },
+								{ query: '@onCancel', info: '右侧按钮的点击事件', type: 'method', choose: '--', default: '--' },
+							]
+						},
+						
+						{
+							name: 'LyPopOver Attributes Popover 弹出框',
+							childList: [
+								{ query: 'title', info: '顶部的提示语信息', type: 'string', choose: '--', default: '--' },
+								{ query: 'content', info: '提示的主体内容信息', type: 'string', choose: '--', default: '--' },
+								{ query: 'trigger', info: '触发方式', type: 'string', choose: 'click / hover', default: 'click' },
+								{ query: 'placement', info: '弹出框出现的位置', type: 'string', choose: 'top / bottom', default: 'top' },
+							]
 						}
 					],
 					
