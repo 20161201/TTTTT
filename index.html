@@ -14,7 +14,7 @@
 				<p class="big">MiniLy-UI 使用文档</p>
 				<p class="small">By @LanYue</p>
 				<!-- <p class="update">@update: 2020/6/18 上午10:20:19</p> -->
-				<p class="update">@update: 2020/6/28 下午17:40:19</p>
+				<p class="update">@update: 2020/6/28 下午17:20:19</p>
 			</div>
 			
 			<div v-for="(item,index) in tableList" :key='index'>
@@ -144,6 +144,17 @@
 								{ query: 'content', info: '提示的主体内容信息', type: 'string', choose: '--', default: '--' },
 								{ query: 'trigger', info: '触发方式', type: 'string', choose: 'click / hover', default: 'click' },
 								{ query: 'placement', info: '弹出框出现的位置', type: 'string', choose: 'top / bottom', default: 'top' },
+							]
+						},
+						
+						{
+							name: 'LyDialog Attributes dialog 弹出框',
+							childList: [
+								{ query: 'title', info: '顶部的提示语信息', type: 'string', choose: '--', default: '--' },
+								{ query: 'visible', info: '是否显示弹出层', type: 'string', choose: '--', default: '--' },
+								{ query: 'width', info: '弹出框的宽度', type: 'string', choose: '--', default: '375px' },
+								{ query: 'showClose', info: '是否显示关闭icon', type: 'boolean', choose: '--', default: 'true' },
+								{ query: 'close', info: '关闭的回调函数', type: 'function', choose: '--', default: '--' },
 							]
 						}
 					],
