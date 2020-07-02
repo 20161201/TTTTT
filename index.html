@@ -14,11 +14,11 @@
 				<p class="big">MiniLy-UI 使用文档</p>
 				<p class="small">By @LanYue</p>
 				<!-- <p class="update">@update: 2020/6/18 上午10:20:19</p> -->
-				<p class="update">@update: 2020/6/30 下午17:20:19</p>
+				<p class="update">@update: 2020/7/2 下午17:45:19</p>
 			</div>
 			
 			<div v-for="(item,index) in tableList" :key='index'>
-				<div class="component-name">{{ item.name.split('Attributes')[0]}} <span class="name-bg">< {{ item.name.split('Attributes')[1] }} ></{{></span> </div>
+				<div class="component-name"><span v-if="item.name.split('Ly')[0] != ''" class="name-star">{{ item.name.split('Ly')[0] }}</{{></span>{{ item.name.split('Attributes')[0].split('*')[1]}} <span class="name-bg">< {{ item.name.split('Attributes')[1] }} ></{{></span> </div>
 				<table border="0" class="ly-table">
 					<tr>
 						<th>参数</th>
@@ -155,6 +155,17 @@
 								{ query: 'width', info: '弹出框的宽度', type: 'string', choose: '--', default: '375px' },
 								{ query: 'showClose', info: '是否显示关闭icon', type: 'boolean', choose: '--', default: 'true' },
 								{ query: 'close', info: '关闭的回调函数', type: 'function', choose: '--', default: '--' },
+							]
+						},
+						
+						{
+							name: '* LyMessageBox Attributes MessageBox 弹出框， 提供用 js 直接使用，无需 import 组件进行注册。提供三种模式，this.$alert，this.$confirm，this.$prompt',
+							childList: [
+								{ query: 'title', info: '顶部左侧的提示语信息', type: 'string', choose: '--', default: '--' },
+								{ query: 'message', info: '提示的消息正文内容', type: 'string', choose: '--', default: '--' },
+								{ query: 'confirmButtonText', info: '确认按钮的文本内容', type: 'string', choose: '--', default: '375px' },
+								{ query: 'concelButtonText', info: '取消按钮的文本内容', type: 'boolean', choose: '--', default: 'true' },
+								{ query: 'showInput', info: '是否显示 input 框', type: 'function', choose: '--', default: '--' },
 							]
 						}
 					],
